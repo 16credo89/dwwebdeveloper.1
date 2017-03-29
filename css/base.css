@@ -113,6 +113,7 @@ body {
 	-o-animation-duration: 3s;
 }
 h2 {
+	margin-top: 0;
 	font-weight: normal;
 	font-size: 4em;
 	animation-name: FadeInUp;
