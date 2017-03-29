@@ -1,0 +1,17 @@
+h2 {
+	margin-top: 0;
+}
+.facial img {
+	height: 380px;
+}
+
+.main_nav li {
+	display: block;
+}
+.main_nav a {
+	margin-left: 0;
+}
+
+h2 {
+	font-size: 3em;
+}
