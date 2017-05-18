@@ -1,0 +1,16 @@
+var aboutMe = '<article id=\"main_article\"><section class=\"about\" id=\"career\"><h4 style=\"text-align:center\">Career</h4><p>I am currently attending Palm Beach State college where I am currently completing my final semester this Fall. I am majoring in computer programming and will be receiving an Associate of Science. It has been a very slow process for me, but in pursuit of a career that will be the bases of me starting a family, I can say that I have devoted a countless amount of time into this trade, both in and out of class. I have studied Visual Basic, C, various server side languages (I specialize in PHP), MySQL, among a few other languages and skills and I am constantly gaining more and more knowledge of this art.</p></section><section class=\"about\" id=\"personal\"><h4 style=\"text-align:center\">Personal</h4><p>The first thing someone should know about me (especially as it relates to my profession) is that I am a follower of Jesus Christ. That does not mean that I am perfect, in any sense, but It means that I strive to glorify God in all that I do. Honesty, hard work, and perfection is my standard in everything I do. I enjoy surfing the web and reading books on theology, articles on politics, etc. I am a bit of a loner (not ashamed to admit that), but I can also be the funniest guy in the group. I have a blog: <a href=\"http://www.thoughtsodditiesandtheology.blogspot.com/\" target=\"_blank\">www.thoughtsoddities andtheology. blogspot.com</a> , you should visit. And I currently live in Lake Worth, FL and have desire to move to Texas.</p></section></article>';
+
+
+var contactMe =  '<article id=\"main_article\">
+            <section class=\"contact_me\">
+            <ul>
+                <li>Email Me at <a href=\"mailto:darnellwesh@dwwebdeveloper.com\" style=\"font-size:13px;\">darnellwesh@dwwebdeveloper.com</a></li>
+                <li>Phone: <a href=\"tel:561-502-6359\">(561) 502-6359</a></li>
+                <li><a href=\"https://plus.google.com/u/0/b/104565898013068315624/104565898013068315624/about\" target=\"_blank\" alt=\"Google\" title=\"Google\">Click Here</a> for Google+</li>
+                <li><a href=\"http://www.facebook.com\" target=\"_blank\" alt=\"Facebook\" title=\"Facebook\">Click Here</a> for Facebook</li>
+                <li><a href=\"http://www.twitter.com\" target=\"_blank\" alt=\"Twitter\" title=\"Twitter\">Click Here</a> for Twitter</li>
+            </ul>
+            <p style=\"font-size:14px;margin-left:5px;line-height: 10px;margin-top:-10px;\"><i>*The map is in case you live in the area. I will gladly come to you or we can meet up to talk about your site.</i></p>
+            </section> 
+                <iframe id=\"map\" src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3567.375007903744!2d-80.0997819!3d26.604423900000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d92787e074016d%3A0x38fad1b7da853fad!2sBrooklyn+Ln%2C+Lake+Worth%2C+FL+33461!5e0!3m2!1sen!2sus!4v1411504776331\" width=\"225\" height=\"150\" frameborder=\"0\" style=\"border:0\"></iframe>
+            </article>';

@@ -1,0 +1,418 @@
+<!DOCYTPE html>
+<html lang="en">
+<head>
+	<title>DW Web Developer</title>
+	<meta charset="utf-8">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Questrial|Montserrat|Patua+One' rel='stylesheet' type='text/css'>
+	<style>
+	body {
+		background-color: #EBEBF3;
+		font-family: 'Montserrat', sans-serif;
+	}
+	h1{
+		display: inline-block;
+	}
+	/*#slogan {
+		float: right;
+		margin-right: 10%;
+	}*/
+	#slogan span{
+		margin-top: 10px;
+		/*display: inline-block;*/
+		background-color: black;
+		color: white;
+		font-family: 'Patua One', cursive;
+		border-radius: 5px;
+	}
+
+	.jumbotron{background-color: #EBEBF3;
+		padding-top: 0;
+		padding-bottom: 0;}
+	.jumbotron .row {background-color: #EBEBF3}
+	.jumbotron img {display: inline-block;
+
+		margin-left: 5px;}
+	.block {
+		display: inline-block;
+		height: 150px;
+		width: 150px;
+		background-color: black;
+		color: white;
+		font-family: 'Patua One', cursive;
+		border-radius: 5px;
+	}
+	.words{
+		/*display: inline-block;
+		width: 60%;*/
+		font-size: 20px;
+		/*border: 1px solid black;*/
+	}
+	.lefty {
+		float: right;
+	}
+	.row{
+		padding: 50px 100px 50px 100px;
+		background-color: white;
+		/*max-height:250px;*/
+	}
+	/*img {
+		display: inline-block;
+	}*/
+	/*#hog{float:right;}*/
+	/*.btn-black {
+		background-color: black;
+		color: white;
+	}*/
+	</style>
+	<script src="js/pageText.js"></script>
+	<script>
+	$(document).ready(function(){
+		//career/personal
+		$("#stuff1").hide();
+		$("#stuff2").hide();
+
+		var former1,former2;
+
+		former1 = $("#row1").height();
+		former2 = $("#row2").height();
+		
+		$('#email-temp-row').hide();
+		$('#email-template').click(function(){
+			$('#websites-p').hide();
+			$('#email-temp-row').toggle();	
+		});
+		
+		$('#websites-p').hide();
+		$('#websites').click(function(){
+			$('#email-temp-row').hide();
+			$('#websites-p').toggle();	
+		});
+		
+		$("#row1").hover(function(){
+			$('#email-temp-row').hide();
+			
+		},function(){
+			
+		});
+
+		$("#row2").hover(function(){
+			$("#row1").hide();
+			$(this).height(former1+former2+50);
+		},function(){
+			$("#row1").show();
+			$(this).height("initial");
+		});
+
+		$("#row3").hover(function(){
+			$("#row2").hide();
+			$("#row1").hide();
+			$(this).height("100%");
+		},function(){
+			$("#row2").show();
+			$("#row1").show();
+			$(this).height("initial");
+		});
+
+		// side 1
+
+		$("#side1").hover(function(){
+			$("#stuff1").show();
+			$("#side2").hide();
+			$('#wordCol1').hide();
+			var side1button = document.getElementById("blockCol1");
+			side1button.className = 'col-md-12';
+
+			$(side1button).children("img").css({
+				"margin":"0 auto",
+				"float":"none",
+			});
+
+			$(side1button).children("img").attr({
+				"src":"img/aboutme-short.png",
+				"width":"150",
+				"height":"50",
+			});
+
+			side1button.className += ' text-center';
+		 }, function(){
+			$("#stuff1").hide();
+			$("#side2").show();
+			$('#wordCol1').show();
+			var side1button = document.getElementById("blockCol1");
+
+			$(side1button).children("img").attr({
+				"src":"img/aboutme.png",
+				"width":"150",
+				"height":"150",
+			});
+			$(side1button).children("img").css({
+				"float":"left",
+			});
+
+			side1button.className = 'col-md-2';
+		});
+
+		// side 2
+
+		$("#side2").hover(function(){
+			$("#stuff2").show();
+			$("#side1").hide();
+			$('#wordCol2').hide();
+			var side2button = document.getElementById("blockCol2");
+			side2button.className = 'col-md-12';
+
+			$(side2button).children("img").css({
+				"margin":"0 auto",
+				"float":"none",
+			});
+
+			$(side2button).children("img").attr({
+				"src":"img/contactme-short.png",
+				"width":"150",
+				"height":"50",
+			});
+		}, function(){
+			$("#stuff2").hide();
+			$("#side1").show();
+			$('#wordCol2').show();
+			var side2button = document.getElementById("blockCol2");
+
+		 	$(side2button).children("img").attr({
+				"src":"img/contactme.png",
+				"width":"150",
+				"height":"150",
+			});
+			$(side2button).children("img").css({
+				"float":"left",
+			});
+			side2button.className = 'col-md-2';
+		});
+	});
+	$(window).resize(function(){location.reload();});
+
+	function html(){
+	        var html=" \
+		        <h3>HTML5</h3> \
+		        <p> \
+		        HTML5 is used in a way that is efficient and clearly defined for future use. \
+		        </p>";
+    		document.getElementById('servicesDesc').innerHTML = html;
+	    } 
+	    function css(){
+	        var css=" \
+		        <h3>CSS3</h3> \
+		        <p> \
+		        Cascading Style Sheets are used to create beautiful sites that are custom made for the image of every business and/or person. \
+		        </p>";
+				document.getElementById('servicesDesc').innerHTML = css;
+		}
+		function php(){
+	        var php=" \
+		        <h3>PHP</h3> \
+		        <p> \
+		        Dynamic websites which can be used for anything from calculations, to anything you can think of. I use PHP to take a flat page and make it interactive for the user. \
+		        </p>";
+				document.getElementById('servicesDesc').innerHTML = php;
+		}
+		function mysql(){
+	        var mysql=" \
+		        <h3>MYSQL</h3> \
+		        <p> \
+		        A great tool used to create a database for whatever need you may have, whether it be for products, personal information, etc. \
+		        </p>";
+		        document.getElementById('servicesDesc').innerHTML = mysql;
+		}
+		function javascript(){
+	        var javascript=" \
+		        <h3>JavaScript</h3> \
+		        <p> \
+		        Another tool, similar to PHP, used to create both beautiful and dynamic websites. \
+		        </p>";
+		        document.getElementById('servicesDesc').innerHTML = javascript;
+		}
+		function free_est(){
+	        var free_est=" \
+		        <h3>Free Estimate</h3> \
+		        <p> \
+		        	Do not worry about getting charged a bunch of money for a basic estimate of what your site may cost. Should we go further with the process a formal contract will be established with fees and product information. \
+		        </p>";
+				document.getElementById('servicesDesc').innerHTML = free_est;
+		}
+		function comp_price(){
+	        var comp_price=" \
+		        <h3>Competitive Pricing</h3> \
+		        <p> \
+		        	My main attraction is my pricing, I am willing to beat any price of the competitor while at the same time offering an initial price that is the best around. \
+		        </p>";
+				document.getElementById('servicesDesc').innerHTML = comp_price;
+		}
+		function debug(){
+	        var debug=" \
+		        <h3>Code Debugging</h3> \
+		        <p> \
+		        	Got code that just is not doing it for you? Bring it to me and I’ll fix it. (It must, for your benefit, be a programming language I’m familiar with, I'll let you know.) \
+		        </p>";
+	    		document.getElementById('servicesDesc').innerHTML = debug;
+	    }
+	    function site_maint(){
+	        var site_maint=" \
+	        <h3>Site Maintenance</h3> \
+	        <p> \
+	        	When the contract is created I will know whether or not you want me to maintain the site for you or whether or not you just want me to hand you the code. If you are unfamiliar with hosting companies, it may be in your best interest for me to handle that for you. Keep in mind that having a website online requires a monthly fee. \
+	     	</p>";
+	     	document.getElementById('servicesDesc').innerHTML = site_maint;
+		}
+	</script>
+	
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="jumbotron">
+			<div class="row">
+				<div class="col-md-8">
+					<h1 style="color:black;">d.w. web developer</h1>
+					<br>
+					<img src="img/aboutme-short.png" height="50" width="150" class="img-responsive" id="m1" />
+					<img src="img/contactme-short.png" height="50" width="150" class="img-responsive" id="m2" />
+					<img src="img/portfolio-short.png" height="50" width="150" class="img-responsive" id="m3" />
+					<img src="img/services-short.png" height="50" width="150" class="img-responsive" id="m4" />
+				</div>
+				<div class="col-md-4">
+					<p id="slogan"><span>Aiding people, organizations,</span><br><span>and businesses through</span><br><span>internet innovations.</span></p>
+				</div>
+			</div>
+		</div>
+		<div class="row" id="row1">
+			<div id="side1">
+				<div class="col-md-2" id="blockCol1">
+					<img src="img/aboutme.png" height="150" width="150" class="img-responsive" />
+				</div>
+				<div class="col-md-4" id="wordCol1">
+					<p class="words" style="float:right;">It's always a good thing to know who you are trusting to make the website you so desperately need.</p>
+				</div>
+				<div id="stuff1">
+					<div class="col-md-6">
+						<h4 style="text-align:center">Career</h4><p>I am currently attending Palm Beach State college where I am currently completing my final semester this Fall. I am majoring in computer programming and will be receiving an Associate of Science. It has been a very slow process for me, but in pursuit of a career that will be the bases of me starting a family, I can say that I have devoted a countless amount of time into this trade, both in and out of class. I have studied Visual Basic, C, various server side languages (I specialize in PHP), MySQL, among a few other languages and skills and I am constantly gaining more and more knowledge of this art.</p>
+					</div>
+					<div class="col-md-6">
+						<h4 style="text-align:center">Personal</h4><p>The first thing someone should know about me (especially as it relates to my profession) is that I am a follower of Jesus Christ. That does not mean that I am perfect, in any sense, but It means that I strive to glorify God in all that I do. Honesty, hard work, and perfection is my standard in everything I do. I enjoy surfing the web and reading books on theology, articles on politics, etc. I am a bit of a loner (not ashamed to admit that), but I can also be the funniest guy in the group. I have a blog: <a href="http://www.thoughtsodditiesandtheology.blogspot.com/" target="_blank">www.thoughtsoddities andtheology. blogspot.com</a> , you should visit. And I currently live in Lake Worth, FL and have desire to move to Texas.</p>
+					</div>
+				</div>
+			</div>
+			<div id="side2">
+			<div class="col-md-2" id="blockCol2">
+				<!-- <div class="block">
+					<h2>contact me</h2>
+				</div> -->
+				<img src="img/contactme.png" height="150" width="150" class="img-responsive" />
+			</div>
+			<div class="col-md-4" id="wordCol2">
+				<p class="words" style="float:right;">Please feel free to contact me with any inquires as it pertains to any work I can provide to you.</p>
+			</div>
+			<div id="stuff2">
+				<div class="col-md-4">
+					<ul>
+		                <li>Email Me at <a href="mailto:darnellwesh@dwwebdeveloper.com" style="font-size:13px;">darnellwesh@dwwebdeveloper.com</a></li>
+		                <li>Phone: <a href="tel:561-502-6359">(561) 502-6359</a></li>
+		                <li><a href="https://plus.google.com/u/0/b/104565898013068315624/104565898013068315624/about" target="_blank" alt="Google" title="Google">Click Here</a> for Google+</li>
+		                <li><a href="http://www.facebook.com" target="_blank" alt="Facebook" title="Facebook">Click Here</a> for Facebook</li>
+		                <li><a href="http://www.twitter.com" target="_blank" alt="Twitter" title="Twitter">Click Here</a> for Twitter</li>
+	            	</ul>
+				</div>
+				<div class="col-md-4 col-md-offset-4">
+					<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3567.375007903744!2d-80.0997819!3d26.604423900000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d92787e074016d%3A0x38fad1b7da853fad!2sBrooklyn+Ln%2C+Lake+Worth%2C+FL+33461!5e0!3m2!1sen!2sus!4v1411504776331" width="200px" height="200px" frameborder="0" style="border:0"></iframe>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="row"  id="row2" style="background-color: #EBEBF3;">
+			<div class="col-md-2">
+				<img src="img/portfolio.png" height="150" width="150" class="img-responsive" />
+			</div>
+			<div class="col-md-10">
+				<p class="words">Check out some of the websites and projects I have worked on.</p>
+				<p><span id="websites">Websites</span> | <span id="email-template">Email Templates</span></p>
+				<!-- ************************************************ -->
+				<p id="websites-p">My website portfolio is currently under construction. Please, stay tuned.</p>
+				<div class="row" style="background-color: #EBEBF3;" id="email-temp-row">
+				<div class="col-md-4">
+				<img src="lifestylewaterfrontemail/img/e1.jpg" alt="Lifestyle Water Front" class="img-rounded center-block">
+				<ul class="list-group-item" style="background-color:#EBEBF3;border:none;">
+					<li class="list-group-item"><h4 class="list-group-item-heading">Lifestyle Waterfroont</h4>
+						<p class="list-group-item-text"> This is a template for a real estate agency. The email template is <strong>responsive</strong> so you can resize it to look like the original image.</p>
+					</li>
+					<li class="list-group-item"><a href="lifestylewaterfrontemail/lifestylewaterfront-email.jpg" target="_blank">Original image</a></li>
+					<li class="list-group-item"><a href="lifestylewaterfrontemail/lifestylewaterfront-email.html" target="_blank">HTML rendering</a></li>
+					<li class="list-group-item"><a href="downloads/lifestylewaterfrontemail-2015-05-13.zip">Download files</a></li>
+				</ul>
+				</div>
+				<div class="col-md-4">
+				<img src="finedining/img/e1.jpg" alt="Lifestyle Water Front" class="img-rounded center-block">
+				<ul class="list-group-item" style="background-color:#EBEBF3;border:none;">
+					<li class="list-group-item" style="height:118px;"><h4 class="list-group-item-heading">Fine Dining</h4>
+						<p class="list-group-item-text" style="margin-top:11%;"> This is a template for a restaurant.</p>
+					</li>
+					<li class="list-group-item"><a href="finedining/finedining.png" target="_blank">Original image</a></li>
+					<li class="list-group-item"><a href="finedining/finedining.html" target="_blank">HTML rendering</a></li>
+					<li class="list-group-item"><a href="downloads/finedining-2015-05-13.zip">Download files</a></li>
+				</ul>
+				</div>
+				<div class="col-md-4">
+				<img src="double-wink/img/e1.jpg" alt="Lifestyle Water Front" class="img-rounded center-block">
+				<ul class="list-group-item" style="background-color:#EBEBF3;border:none;">
+					<li class="list-group-item" style="height:118px;"><h4 class="list-group-item-heading">Double Wink</h4>
+						<p class="list-group-item-text" style="margin-top:11%;"> This is a photography email newsletter.</p>
+					</li>
+					<li class="list-group-item"><a href="double-wink/design-email-template-696.png" target="_blank">Original image</a></li>
+					<li class="list-group-item"><a href="double-wink/double-wink.html" target="_blank">HTML rendering</a></li>
+					<li class="list-group-item"><a href="downloads/double-wink-2015-05-13.zip">Download files</a></li>
+				</ul>
+				</div>
+				</div>
+				<!-- ************************************************ -->
+			</div>
+		</div>
+		<div class="row"  id="row3">
+			<div class="col-md-12">
+				<img src="img/services.png" height="150" width="150" class="img-responsive" style="float:right;margin-right:36.1%;" />
+				<p class="words">Click the list for description.</p>
+				<div id="stuff4">
+					<div class="btn-group">
+					  <p class="dropdown-toggle" data-toggle="dropdown">Code |</p>
+					  <ul class="dropdown-menu" role="menu">
+					    <li><a href="#" onclick='html()'>HTML5</a></li>
+					    <li><a href="#" onclick='css()'>CSS3</a></li>
+					    <li><a href="#" onclick='php()'>PHP</a></li>
+					    <li><a href="#" onclick='mysql()'>MySQL</a></li>
+					    <li><a href="#" onclick='javascript()'>JavaScript</a></li>
+					  </ul>
+					</div>
+					
+					<div class="btn-group">
+					  <p class="dropdown-toggle" data-toggle="dropdown">Services</p>
+					  <ul class="dropdown-menu" role="menu">
+					    <li><a href="#" onclick='free_est()'>Free Estimate</a></li>
+					    <li><a href="#" onclick='comp_price()'>Competative Pricing</a></li>
+					    <li><a href="#" onclick='debug()'>Code Debugging</a></li>
+					    <li><a href="#" onclick='site_maint()'>Site Maintenance</a></li>
+					  </ul>
+					</div>
+
+					<section id="servicesDesc">
+                    	<p>...</p>
+                	</section>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/more.js"></script>
+</body>
+</html>

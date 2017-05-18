@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test Page</title>
+	<meta name="viewport" content="width=device-width">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Questrial|Montserrat|Patua+One' rel='stylesheet' type='text/css'>
+	<style>
+	body,html {
+		margin: 0;
+		padding: 0;
+		font-family: 'Montserrat', sans-serif;
+	}
+	#container {
+		width: 100%;
+		height: 100%;
+		min-width: 1165px;
+	}
+	header,#portfolio {
+		background-color: #EBEBF3;
+	}
+	#about-contact,#services {
+		background-color: #FFFFFF;
+	}
+	header {
+		height: 250px;
+		margin: 0;
+		position: relative;
+	}
+	#slogan span{
+		/*margin-top: 10px;*/
+		/*display: inline-block;*/
+		background-color: black;
+		color: white;
+		font-family: 'Patua One', cursive;
+		border-radius: 5px;
+	}
+	#slogan {
+		margin-top: 50px;
+	    margin-right: 50px;
+	    line-height: 1.7em;
+	}
+	
+	section {
+		height: 200px;
+		padding: 20px 30px;
+		float: none;
+		margin: 0;
+	}
+	#aboutHover, #contactHover {
+		display:none;
+	}
+	#about-contact {
+		padding: 0;
+	}
+	#about,#contact {
+		width: 50%;
+		height: 100%;
+		box-sizing: border-box;
+		padding: 20px 30px;
+	}
+	#about {
+		float: left;
+		/*background-color: blue;*/
+	}
+	#contact{
+		float: left;
+		/*background-color: red;*/
+	}
+	/*#portfolio{background-color:green;}*/
+	header ul,.servicelist{
+		list-style-type: none;
+	}
+	header ul li,.servicelist li{
+		display: inline;
+	}
+	h4{
+		margin-top: 0;
+		margin-bottom: 0;
+		
+		font-family: 'Patua One', cursive;
+	}
+	
+.vertical-text {
+	
+		font-family: 'Patua One', cursive;
+}
+/*#imgbox {*/
+/*	border-radius: 10px;*/
+/*	width: 200px;*/
+/*	height: 200px;*/
+/*}*/
+
+#portfoliostuff {
+	float: right;
+	/*width: 280px;*/
+}
+#item{float:left;margin-left: 20px;}
+#item ul {
+	list-style-type: none;
+	margin: 0;
+	margin-top: 20px;
+	padding: 0;
+	border: 1px solid lightgrey;
+	border-radius: 5px;
+	background-color: white;
+}
+#item li {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-align: center;
+	border-bottom: 1px solid lightgrey;
+}
+#item #last {
+	border-bottom: none;
+}
+#item img {
+	
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    transition: all .2s ease-in-out;
+}
+#item img:hover { transform: scale(1.1); 
+}
+
+	#servicesstuff {
+		width: 60%;
+		float: right;
+		text-align: center;
+	}
+	#servicesstuff a {
+		background-color: black;
+		padding: 10px;
+		border-radius: 5px;
+		color: white;
+		text-decoration: none;
+	}
+	#servicesstuff a:hover{
+		background-color: grey;
+		color:black;
+	}
+	/*#s2 a {*/
+	/*	margin-top: 20px;*/
+	/*}*/
+	</style>
+	<script>
+	$(function(){
+		$("#portfoliostuff").hide();
+		$("#portfoliostuff2").hide();
+		$("#servicesstuff").css("display","none");
+		
+		$("h4").css("display","none");
+		$("#item h4").css("display","initial");
+		
+		$("#about-contact").mouseenter(function(){
+			aboutContact();
+        });
+        
+		$("#about").mouseenter(function(){
+			aboutMe();
+		});
+		
+		$("#m1").click(function(){
+			aboutMe();
+		});
+		$("#contact").mouseenter(function(){
+			contact();
+		});
+		$("#m2").click(function(){
+			contact();
+		});
+		
+		$("#portfolio").mouseenter(function(){
+            portfolio();
+        });
+        ;
+        $("#m3").click(function(){
+            portfolio();
+        });
+    //     $("#m3").mouseleave(function(){
+    //         $("#about-contact").mouseenter(function(){
+    //         	setTimeout(function(){clearTimeout(i)},10000);
+
+				// portfolio();
+    //     	});
+    //     })
+        $("#services").mouseenter(function(){
+            services();
+        });
+        $("#m4").click(function(){
+            services();
+        });
+		
+		function aboutContact(){
+			// $('html,body').animate({
+   //             scrollTop: $("#about-contact").offset().top
+   //         },0);
+        
+			$("#about-contact").css("height","300px");
+			
+			$("#portfoliostuff").hide();
+			$("#portfoliostuff2").hide();
+			$("#servicesstuff").css("display","none");
+			
+			$(".vertical-text").css({
+				"transform":" rotate(90deg)",
+				"transform-origin": "left top 0",
+				"width": "300px",
+			}) 
+		}
+		
+		function aboutMe(){
+			$("#contact").css("width","5%");
+			$("#about").css("width","95%");
+			
+			$("#about-contact").css("height","300px");
+			
+			$("#about img").css("display","none"); // remove About big box
+			$("#about p").css("display","none"); // remove paragraph under big box
+			$("#about h4").css("display","none"); // remove closed header
+			$("#aboutHover").css("display","initial");
+			$("#aboutHover p").css("display","block");
+			$("#aboutHover h4").css("display","block");
+			$("#aboutHover img").css("display","inline-block");
+			
+			$("#contact img").css("display","none");
+			$("#contact p").css("display","none");
+			$("#contact h4").css("display","inline-block");
+			
+			$("#contactHover").css("display","none");
+			
+			$("#aboutHover img").css({
+				"display":"block",
+				"margin":"0 auto",
+			});
+			$(".aboutstuff").css({
+				"float":"left",
+				"width":"49%",
+				"margin-top":"20px",
+			});
+			$("#personal").css("margin-left","2%");
+			
+			}
+			
+			function contact(){
+				$("#about").css("width","5%");
+				$("#contact").css("width","95%");
+				
+				
+			$("#about-contact").css("height","300px");
+				
+				$("#contact img").css("display","none");
+				$("#contact p").css("display","none");
+				$("#contact h4").css("display","none");
+				
+				
+				$("#about img").css("display","none");
+				$("#about p").css("display","none");
+				$("#about h4").css("display","inline-block");
+				
+				$("#aboutHover").css("display","none");
+				
+				///////////////
+				
+				$("#contactHover").css("display","initial");
+				$("#contactHover p").css("display","block");
+				$("#contactHover h4").css("display","block");
+				$("#contactHover img").css("display","inline-block");
+				///
+				
+				$("#contactHover img").css({
+					"display":"block",
+					"margin":"0 auto",
+				});
+				$(".contactstuff").css({
+					"float":"left",
+					"width":"49%",
+					"margin-top":"20px",
+				});
+				$("#map").css("margin-left","2%");
+			}
+			
+			function portfolio(){
+				$("#portfolio img").css("display","initial");
+			$("#portfolio p").css("display","block");
+			$("#portfolio h4").css("display","none");
+			
+			
+            $('html,body').animate({
+                scrollTop: $("#menu").offset().top
+            },0);
+            
+			$("#portfolio").css("height","450px");
+			$("#about-contact").css("height","50px");
+			$("#about-contact img").css("display","none");
+			$("#about-contact p").css("display","none");
+			$("#about-contact h4").css("display","inline");
+			
+
+			$("#about").css("width","50%");
+			$("#contact").css("width","50%");
+			
+			$("#aboutHover").css("display","none");
+			$("#contactHover").css("display","none");
+			$("#servicesstuff").css("display","none");
+			}
+			
+			
+        	function services(){
+        		$('html,body').animate({
+                scrollTop: $("#menu").offset().top
+            },0);
+            
+			$("#services").css("height","500px");
+			
+			$("#about-contact").css("height","50px");
+			$("#portfolio").css("height","10px");
+			// $("#portfolio").css("padding","0px");
+			
+			$("#about-contact img").css("display","none");
+			$("#about-contact p").css("display","none");
+			$("#about-contact h4").css("display","inline");
+			
+			$("#portfolio img").css("display","none");
+			$("#portfolio p").css("display","none");
+			$("#portfolio h4").css("display","inline");
+			
+		
+			$("#about").css("width","50%");
+			$("#contact").css("width","50%");
+			
+			
+			$("#aboutHover").css("display","none");
+			$("#contactHover").css("display","none");
+			$("#portfoliostuff").css("display","none");
+			$("#portfoliostuff2").css("display","none");
+			
+			$("#servicesstuff").css("display","initial");
+        	}
+        
+        $("#email-template").click(function(){
+			$("#portfoliostuff2").hide();
+		    $("#portfoliostuff").toggle();
+		});
+		$("#websites").click(function(){
+			$("#portfoliostuff").hide();
+		    $("#portfoliostuff2").toggle();
+		});
+		
+		$('.servicelist a').click(function(e) {
+     // do something fancy
+		     return false; // prevent default click action from happening!
+		     e.preventDefault(); // same thing as above
+		});
+		
+	});
+	</script>
+</head>
+<body>
+	<div id="container">
+	<header>
+		<div style="width:60%;float:left;position:absolute;bottom:0;">
+		<h1 style="margin-left:40px;font-size:3em;">d.w. web developer</h1>
+		<ul style="margin-bottom:0px;" id="menu">
+			<li><img src="img/aboutme-short.png" height="50" width="150" class="img-responsive" id="m1" /></li>
+			<li><img src="img/contactme-short.png" height="50" width="150" class="img-responsive" id="m2" /></li>
+			<li><img src="img/portfolio-short.png" height="50" width="150" class="img-responsive" id="m3" /></li>
+			<li><img src="img/services-short.png" height="50" width="150" class="img-responsive" id="m4" /></li>
+		</ul>
+		</div>
+		<div style="40%;">
+			<p id="slogan" style="float:right;"><span>Aiding people, organizations,</span><br><span>and businesses through</span><br><span>internet innovations.</span></p>
+		</div>
+	</header>
+	<section id="about-contact">
+		<div id="about">
+			<h4 class="vertical-text">About me</h4>
+			<img src="img/aboutme.png" height="150" width="150" style="float:left;"/>
+			<p class="sides" style="width:50%;float:left;margin-left:10px;">It's always a good thing to know who you are trusting to make the website you so desperately need.</p>
+			
+			<div id="aboutHover">
+				<img src="img/aboutme-short.png" height="50" width="150"/>
+				<div class="aboutstuff" id="career" >
+					<h4 style="text-align:center">Career</h4><p>I am currently attending Palm Beach State college where I am currently completing my final semester this Fall. I am majoring in computer programming and will be receiving an Associate of Science. It has been a very slow process for me, but in pursuit of a career that will be the bases of me starting a family, I can say that I have devoted a countless amount of time into this trade, both in and out of class. I have studied Visual Basic, C, various server side languages (I specialize in PHP), MySQL, among a few other languages and skills and I am constantly gaining more and more knowledge of this art.</p>
+				</div>
+				<div class="aboutstuff" id="personal">
+					<h4 style="text-align:center">Personal</h4><p>The first thing someone should know about me (especially as it relates to my profession) is that I am a follower of Jesus Christ. That does not mean that I am perfect, in any sense, but It means that I strive to glorify God in all that I do. Honesty, hard work, and perfection is my standard in everything I do. I enjoy surfing the web and reading books on theology, articles on politics, etc. I am a bit of a loner (not ashamed to admit that), but I can also be the funniest guy in the group. I have a blog: <a href="http://www.thoughtsodditiesandtheology.blogspot.com/" target="_blank">www.thoughtsodditiesandtheology.blogspot.com</a> , you should visit. And I currently live in Lake Worth, FL and have desire to move to Texas.</p>
+				</div>
+			</div>
+		
+		</div>
+		<div id="contact">
+			<h4 class="vertical-text">Contact Me</h4>
+			<img src="img/contactme.png" height="150" width="150" style="float:left;"/>
+			<p class="sides" style="width:50%;float:left;margin-left:10px;">Please feel free to contact me with any inquires as it pertains to any work I can provide to you.</p>
+			
+			<div id="contactHover">
+				<img src="img/contactme-short.png" height="50" width="150"/>
+				<div class="contactstuff" id="career">
+					<ul>
+		                <li>Email Me at <a href="mailto:darnellwesh@dwwebdeveloper.com" style="font-size:13px;">darnellwesh@dwwebdeveloper.com</a></li>
+		                <li>Phone: <a href="tel:561-502-6359">(561) 502-6359</a></li>
+		                <li><a href="https://plus.google.com/u/0/b/104565898013068315624/104565898013068315624/about" target="_blank" alt="Google" title="Google">Click Here</a> for Google+</li>
+		                <li><a href="http://www.facebook.com" target="_blank" alt="Facebook" title="Facebook">Click Here</a> for Facebook</li>
+		                <li><a href="http://www.twitter.com" target="_blank" alt="Twitter" title="Twitter">Click Here</a> for Twitter</li>
+	            	</ul>
+				</div>
+				<div class="contactstuff" id="map">
+					<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3567.375007903744!2d-80.0997819!3d26.604423900000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d92787e074016d%3A0x38fad1b7da853fad!2sBrooklyn+Ln%2C+Lake+Worth%2C+FL+33461!5e0!3m2!1sen!2sus!4v1411504776331" width="100%" height="200px" frameborder="0" style="border:0"></iframe>
+				</div>
+			</div>
+			
+		</div>
+	</section>
+	<section id="portfolio">
+			<h4>Portfolio</h4><br>
+			<img src="img/portfolio.png" height="150" width="150" style="float:left;" />
+			<div style="width: 400px;float:left;margin-left:10px;">
+				<p class="words">Check out some of the websites and projects I have worked on.</p>
+				<p><span id="websites">Websites</span> | <span id="email-template">Email Templates</span></p>
+			</div>
+		<div id="portfoliostuff">
+			<div id="item" style="width:150px;">
+			<!--<div id="imgbox">-->
+				<img src="lifestylewaterfrontemail/img/e2.jpg"  height="150" width="150" alt="Lifestyle Water Front" />
+			<!--</div>-->
+			<ul>
+				<li ><h4>Lifestyle Waterfroont</h4><p> This template is <strong>responsive</strong> so you can resize it.</p></li>
+					<li ><a href="lifestylewaterfrontemail/lifestylewaterfront-email.jpg" target="_blank">Original image</a></li>
+					<li ><a href="lifestylewaterfrontemail/lifestylewaterfront-email.html" target="_blank">HTML rendering</a></li>
+					<li ><a href="downloads/lifestylewaterfrontemail-2015-05-13.zip">Download files</a></li>
+			</ul>
+			</div>
+			
+			<div id="item" style="width:150px;">
+			<!--<div id="imgbox">-->
+				<img src="finedining/img/e2.jpg"  height="150" width="150"  alt="Fine Dining" />
+			<!--</div>-->
+			<ul>
+				<li><h4>Fine Dining</h4><p> This is a template for a restaurant.</p></li>
+				<li><a href="finedining/finedining.png" target="_blank">Original image</a></li>
+				<li><a href="finedining/finedining.html" target="_blank">HTML rendering</a></li>
+				<li><a href="downloads/finedining-2015-05-13.zip">Download files</a></li>
+			</ul>
+			</div>
+			
+			<div id="item" style="width:150px;">
+			<!--<div id="imgbox">-->
+				<img src="double-wink/img/e2.jpg"  height="150" width="150"  alt="Lifestyle Water Front" />
+			<!--</div>-->
+			<ul>
+				<li><h4 class="list-group-item-heading">Double Wink</h4><p>This is a photography email newsletter.</p></li>
+				<li ><a href="double-wink/design-email-template-696.png" target="_blank">Original image</a></li>
+				<li ><a href="double-wink/double-wink.html" target="_blank">HTML rendering</a></li>
+				<li ><a href="downloads/double-wink-2015-05-13.zip">Download files</a></li>
+			</ul>
+			</div>
+		</div>
+		<div id="portfoliostuff2">
+			<p>I am currently working on adding this content to the site. Please, stay tuned or email me for more info.</p>
+		</div>
+			
+	</section>
+	<section id="services">
+			<h4>Services</h4>
+			<img src="img/services.png" height="150" width="150" style="float:left;" />
+			<div style="width: 200px;float:left;margin-left:10px;">
+				<p class="words">Click the list for description.</p>
+			</div>
+			<div id="servicesstuff">
+				<ul class="servicelist">
+				    <li><a href="#" onclick='html()'>HTML5</a></li>
+				    <li><a href="#" onclick='css()'>CSS3</a></li>
+				    <li><a href="#" onclick='php()'>PHP</a></li>
+				    <li><a href="#" onclick='mysql()'>MySQL</a></li>
+				    <li><a href="#" onclick='javascript()'>JavaScript</a></li>
+				</ul>
+				<ul class="servicelist" id="s2" style="margin-top:20px;">
+				    <li><a href="#" onclick='free_est()'>Free Estimate</a></li>
+				    <li><a href="#" onclick='comp_price()'>Competative Pricing</a></li>
+				    <li><a href="#" onclick='debug()'>Code Debugging</a></li>
+				    <li><a href="#" onclick='site_maint()'>Site Maintenance</a></li>
+				</ul>
+				<div id="servicesDesc">
+                    	<p>...</p>
+                </div>
+			</div>
+	</section>
+	</div>
+	<script>
+	function html(){
+	        var html=" \
+		        <h3>HTML5</h3> \
+		        <p> \
+		        HTML5 is used in a way that is efficient and clearly defined for future use. \
+		        </p>";
+    		document.getElementById('servicesDesc').innerHTML = html;
+	    } 
+	    function css(){
+	        var css=" \
+		        <h3>CSS3</h3> \
+		        <p> \
+		        Cascading Style Sheets are used to create beautiful sites that are custom made for the image of every business and/or person. \
+		        </p>";
+				document.getElementById('servicesDesc').innerHTML = css;
+		}
+		function php(){
+	        var php=" \
+		        <h3>PHP</h3> \
+		        <p> \
+		        Dynamic websites which can be used for anything from calculations, to anything you can think of. I use PHP to take a flat page and make it interactive for the user. \
+		        </p>";
+				document.getElementById('servicesDesc').innerHTML = php;
+		}
+		function mysql(){
+	        var mysql=" \
+		        <h3>MYSQL</h3> \
+		        <p> \
+		        A great tool used to create a database for whatever need you may have, whether it be for products, personal information, etc. \
+		        </p>";
+		        document.getElementById('servicesDesc').innerHTML = mysql;
+		}
+		function javascript(){
+	        var javascript=" \
+		        <h3>JavaScript</h3> \
+		        <p> \
+		        Another tool, similar to PHP, used to create both beautiful and dynamic websites. \
+		        </p>";
+		        document.getElementById('servicesDesc').innerHTML = javascript;
+		}
+		function free_est(){
+	        var free_est=" \
+		        <h3>Free Estimate</h3> \
+		        <p> \
+		        	Do not worry about getting charged a bunch of money for a basic estimate of what your site may cost. Should we go further with the process a formal contract will be established with fees and product information. \
+		        </p>";
+				document.getElementById('servicesDesc').innerHTML = free_est;
+		}
+		function comp_price(){
+	        var comp_price=" \
+		        <h3>Competitive Pricing</h3> \
+		        <p> \
+		        	My main attraction is my pricing, I am willing to beat any price of the competitor while at the same time offering an initial price that is the best around. \
+		        </p>";
+				document.getElementById('servicesDesc').innerHTML = comp_price;
+		}
+		function debug(){
+	        var debug=" \
+		        <h3>Code Debugging</h3> \
+		        <p> \
+		        	Got code that just is not doing it for you? Bring it to me and I’ll fix it. (It must, for your benefit, be a programming language I’m familiar with, I'll let you know.) \
+		        </p>";
+	    		document.getElementById('servicesDesc').innerHTML = debug;
+	    }
+	    function site_maint(){
+	        var site_maint=" \
+	        <h3>Site Maintenance</h3> \
+	        <p> \
+	        	When the contract is created I will know whether or not you want me to maintain the site for you or whether or not you just want me to hand you the code. If you are unfamiliar with hosting companies, it may be in your best interest for me to handle that for you. Keep in mind that having a website online requires a monthly fee. \
+	     	</p>";
+	     	document.getElementById('servicesDesc').innerHTML = site_maint;
+		}
+	</script>
+</body>
+</html>
